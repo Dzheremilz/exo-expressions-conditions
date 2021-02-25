@@ -7,11 +7,11 @@ if (currentFloor < -2 || currentFloor > 7 || targetFloor < -2 || targetFloor > 7
   console.log('Cet étage n\'existe pas')
   return
 } else if (currentFloor === targetFloor) {
-  console.log(`Vous vous trouvez déjà a l'étage ${currentFloor}`)
+  console.log(chalk.black.bgWhiteBright(`Vous vous trouvez déjà a l'étage ${currentFloor}`))
 }
 
 while (currentFloor !== targetFloor) {
-  console.log(`Départ de l'étage ${currentFloor} en direction de l'étage ${currentFloor < targetFloor ? currentFloor + 1 : currentFloor - 1}`)
+  console.log(chalk.rgb(0, 186, 161)(`Départ de l'étage ${currentFloor} en direction de l'étage ${currentFloor < targetFloor ? currentFloor + 1 : currentFloor - 1}`))
   currentFloor < targetFloor ? currentFloor++ : currentFloor--
   switch (currentFloor) {
     case -2:
@@ -43,6 +43,8 @@ while (currentFloor !== targetFloor) {
       break
     case 7:
       console.log(chalk.redBright.bgBlackBright(`Arrivé au dernier étage`))
+      break
+    default:
       break
   }
 }
