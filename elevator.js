@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 
-let currentFloor = 'a'
-let targetFloor = '-2'
+let currentFloor = '-1'
+let targetFloor = '7'
 
 currentFloor = Number(currentFloor)
 targetFloor = Number(targetFloor)
