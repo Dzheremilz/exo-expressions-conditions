@@ -1,5 +1,7 @@
-let currentFloor = 7
-let targetFloor = -2
+const chalk = require('chalk');
+
+let currentFloor = -1
+let targetFloor = 7
 
 if (currentFloor < -2 || currentFloor > 7 || targetFloor < -2 || targetFloor > 7) {
   console.log('Cet étage n\'existe pas')
@@ -13,34 +15,34 @@ while (currentFloor !== targetFloor) {
   currentFloor < targetFloor ? currentFloor++ : currentFloor--
   switch (currentFloor) {
     case -2:
-      console.log(`Arrivé au second sous-sol`)
+      console.log(chalk.green(`Arrivé au second sous-sol`))
       break
     case -1:
-      console.log(`Arrivé au premier sous-sol`)
+      console.log(chalk.red(`Arrivé au premier sous-sol`))
       break
     case 0:
-      console.log(`Arrivé au rez de chaussée`)
+      console.log(chalk.green.bgRedBright(`Arrivé au rez de chaussée`))
       break
     case 1:
-      console.log(`Arrivé au premier étage`)
+      console.log(chalk.yellow.bgGreenBright(`Arrivé au premier étage`))
       break
     case 2:
-      console.log(`Arrivé au second étage`)
+      console.log(chalk.blue.bgYellowBright(`Arrivé au second étage`))
       break
     case 3:
-      console.log(`Arrivé au troisième étage`)
+      console.log(chalk.magenta.bgBlueBright(`Arrivé au troisième étage`))
       break
     case 4:
-      console.log(`Arrivé au quatrième étage`)
+      console.log(chalk.cyan.bgMagentaBright(`Arrivé au quatrième étage`))
       break
     case 5:
-      console.log(`Arrivé au cinquième étage`)
+      console.log(chalk.whiteBright.bgCyanBright(`Arrivé au cinquième étage`))
       break
     case 6:
-      console.log(`Arrivé au sixième étage`)
+      console.log(chalk.blackBright.bgWhiteBright(`Arrivé au sixième étage`))
       break
     case 7:
-      console.log(`Arrivé au dernier étage`)
+      console.log(chalk.redBright.bgBlackBright(`Arrivé au dernier étage`))
       break
   }
 }
