@@ -1,9 +1,12 @@
 const chalk = require('chalk');
 
-let currentFloor = -1
-let targetFloor = 7
+let currentFloor = 'a'
+let targetFloor = '-2'
 
-if (currentFloor < -2 || currentFloor > 7 || targetFloor < -2 || targetFloor > 7) {
+currentFloor = Number(currentFloor)
+targetFloor = Number(targetFloor)
+
+if (currentFloor < -2 || currentFloor > 7 || targetFloor < -2 || targetFloor > 7 || isNaN(currentFloor) || isNaN(targetFloor)) {
   console.log('Cet étage n\'existe pas')
   return
 } else if (currentFloor === targetFloor) {
@@ -11,8 +14,7 @@ if (currentFloor < -2 || currentFloor > 7 || targetFloor < -2 || targetFloor > 7
 }
 
 while (currentFloor !== targetFloor) {
-  console.log(chalk.rgb(0, 186, 161)(`Départ de l'étage ${currentFloor} en direction de l'étage ${currentFloor < targetFloor ? currentFloor + 1 : currentFloor - 1}`))
-  currentFloor < targetFloor ? currentFloor++ : currentFloor--
+  console.log(chalk.rgb(0, 186, 161)(`Départ de l'étage ${currentFloor} en direction de l'étage ${currentFloor < targetFloor ? ++currentFloor : --currentFloor}`))
   switch (currentFloor) {
     case -2:
       console.log(chalk.green(`Arrivé au second sous-sol`))
@@ -45,6 +47,7 @@ while (currentFloor !== targetFloor) {
       console.log(chalk.redBright.bgBlackBright(`Arrivé au dernier étage`))
       break
     default:
+      console.log('Une erreur est survenue')
       break
   }
 }
