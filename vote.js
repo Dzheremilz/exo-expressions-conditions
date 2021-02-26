@@ -1,4 +1,4 @@
-let age = 5
+let age = 18
 let canVote = false
 if (age >= 18) {
   canVote = true
@@ -16,4 +16,4 @@ console.log(canVote2)
 
 let canVote3 = false
 age < 18 ? canVote3 = false : canVote3 = true
-canVote3 ? console.log('You can vote') : console.log('You can not vote')
+console.log(`${canVote3 ? 'You can vote' : 'You can not vote'}`)
